@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      form(method='post', action='/contracts/deployed')
+        div.form-group
+          label.text-bold Bytes
+          textarea.form-control.bytes(rows='12',name='bytes',id='bytes') #{contracts['bytes']}
+          a.btn.btn-lg.btn-warning.pull-left(href='javascript:void(0);', onclick='Copy("#bytes")',style='margin-top:5px') Copy
+        div.clearfix
+        div.form-group
+          label.text-bold Abi
+          textarea.form-control.bytes(rows='6',name='abi',id='abi') #{contracts['abi']}
+          a.m-t-1.btn.btn-lg.btn-warning.pull-left(href='javascript:void(0);', onclick='Copy("#abi")',style='margin-top:5px') Copy
+        div.clearfix
+        div.pull-right
+          div.form-group
+            label.text-bold On Account
+            select.form-control(name='account')
+              for account in accounts
+                option #{account}
+          div.form-group
+            label.text-bold Account PWD
+            input.form-control(type='password',name='password')
+          button.btn.btn-lg.btn-success.pull-right(style='margin-top:10px') Deploy >>
+            i.fa.fa-save

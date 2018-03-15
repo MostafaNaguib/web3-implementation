@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      if ((before != undefined) && (after != undefined))
+        table.table.table-striped
+          thead
+          tr
+            td Before
+            td After
+          tbody
+            tr
+              td #{before}
+              td #{after}
+      else
+        div.alert.alert-danger Couldn't start mining #{msg}

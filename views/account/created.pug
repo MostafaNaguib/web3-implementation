@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      if (account != undefined)
+        div.alert.alert-success Account successfully created
+          p #{account}
+      else
+        div.alert.alert-danger Couldn't create account

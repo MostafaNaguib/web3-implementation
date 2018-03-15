@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      table.table.table-striped
+        thead
+          tr
+            td Account
+            td Balance
+        tbody
+        for balance,account in balances
+          tr
+            td #{account}
+            td #{balance}

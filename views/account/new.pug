@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      if(pwd == true)
+        div.alert.alert-danger Password Don't match
+      form(method='post',action='/account/new')
+        div.form-group.col-sm-6
+          label(for='password1') Password
+          input.form-control(type='password',name='password1',id='password1')
+        div.form-group.col-sm-6
+          label(for='password2') Verify password
+          input.form-control(type='password',name='password2',id='password2')
+        button.btn.btn-lg.btn-success.pull-right Create Account
+          i.fa.fa-save

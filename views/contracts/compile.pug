@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      form(method='post',action='/contracts/deploy')
+        div.form-group
+          label(for='contract') Solidity Code
+          textarea.form-control(rows='12',name='contract',id='contract')
+        button.btn.btn-lg.btn-success.pull-right Compile
+          i.fa.fa-save

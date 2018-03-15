@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= title
+  div.row
+    div.col-sm-12
+      if (tx.transactionHash != undefined)
+        div.alert.alert-success Contract successfully deployed
+          p #{tx.transactionHash}
+      else
+        div.alert.alert-danger Contract Couldn't be deployed, #{msg}
